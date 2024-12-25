@@ -9,4 +9,11 @@ async function dbConnect() {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
    }); 
+   console.log('Database connected succesfully!');
+
+   global.dbConnection = connection;
+} catch (error) {
+   console.exit(1); // Exit process with failure
+   }
 }
+module.exports = {dbConnect};  
